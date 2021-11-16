@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements   NavigationView.
         setSupportActionBar(binding.layoutToolBar);
         Objects.requireNonNull(getSupportActionBar()).setTitle("");
 
-
+//Burada biz toggle -da kullana bilirdik o zaman daha çok if bloğu kullanıcaktık ama NavController teknlojisi ile Menu - daki itemların ID-leri ile Navigation.xml ID - leri aynı yaparak tıklanan Fragmente götürüyor bizi
         binding.imageMenu.setOnClickListener(view -> binding.drawerLayout.openDrawer(GravityCompat.START));
 
         binding.floatingActionButton.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
