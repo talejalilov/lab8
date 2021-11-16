@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements   NavigationView.
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.navigationView.setNavigationItemSelectedListener(this);
+
 
         setSupportActionBar(binding.layoutToolBar);
         Objects.requireNonNull(getSupportActionBar()).setTitle("");
@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements   NavigationView.
             NavigationUI.setupWithNavController(binding.navigationView, navController);
 
             navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+
+                binding.navigationView.setNavigationItemSelectedListener(this);
 
                 binding.textTitle.setText(destination.getLabel());
 
