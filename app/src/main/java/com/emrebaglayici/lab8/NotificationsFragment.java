@@ -54,6 +54,9 @@ public class NotificationsFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
 
         inflater.inflate(R.menu.home_fragment_menu, menu);
+        menu.findItem(R.id.markAllAsRead).setVisible(true);
+        menu.findItem(R.id.clearAll).setVisible(true);
+
 
     }
 

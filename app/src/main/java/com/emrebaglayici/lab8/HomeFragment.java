@@ -14,8 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.emrebaglayici.lab8.databinding.FragmentHomeBinding;
-
 public class HomeFragment extends Fragment {
 
     @Override
@@ -33,8 +31,6 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
 
@@ -42,7 +38,7 @@ public class HomeFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
 
         inflater.inflate(R.menu.home_fragment_menu, menu);
-
+        menu.findItem(R.id.logOut).setVisible(true);
         super.onCreateOptionsMenu(menu, inflater);
 
     }
@@ -50,18 +46,11 @@ public class HomeFragment extends Fragment {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.markAllAsRead:  {
-                Toast.makeText(getActivity(), "Mark as read", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-            case R.id.clearAll: {
-                Toast.makeText(getActivity(), "All cleared", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.logOut) {
+            Toast.makeText(getActivity(), "Log Out", Toast.LENGTH_SHORT).show();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
 
     }
 }

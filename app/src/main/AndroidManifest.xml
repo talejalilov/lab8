@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LAB8">
         <activity
+            android:name=".PrivacyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
